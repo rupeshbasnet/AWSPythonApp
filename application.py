@@ -1,10 +1,6 @@
-from flask import Flask
-application = Flask(__name__)
-@application.route('/')
+from dateapp import app as application
 
-def hello():
- return "Hello World"
-# run the app.
 if __name__ == "__main__":
  application.debug = True
  application.run()
+ 
