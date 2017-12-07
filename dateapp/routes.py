@@ -3,6 +3,9 @@ import datetime
 from flask import request
 from flask import render_template
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html')
+	if request.method == 'POST':
+		day = request.form["userinput"]
+		print (day)
+	return render_template('index.html', day = day)

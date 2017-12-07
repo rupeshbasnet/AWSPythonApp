@@ -7,8 +7,11 @@
 		<p>Enter a date below and submit and we will find the day of the week.</p>
 		<form action="/" method = "post">
 			<input type = "date" name="userinput">
-			<input type = "submit">
+			<input type = "submit" name="submit">
 		</form>	
+		{% if day %}
+			{{day}}
+		{% endif %}
 	</div>
 
 {% endblock %}
