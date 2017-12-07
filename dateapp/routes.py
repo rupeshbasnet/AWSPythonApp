@@ -8,6 +8,10 @@ def index():
 	if request.method == 'POST':
 		day = request.form["userinput"]
 		dateTime = datetime.datetime.strptime(day, '%Y-%m-%d').strftime('%A')
-		return render_template('index.html', date = dateTime)
+		outputMonth = datetime.datetime.strptime(day, '%Y-%m-%d').strftime('%B')
+		outputYear = datetime.datetime.strptime(day, '%Y-%m-%d').strftime('%Y')
+		outputDate = datetime.datetime.strptime(day, '%Y-%m-%d').strftime('%d')
+		return render_template('index.html', day = dateTime, date = outputDate, month = outputMonth,
+								year = outputYear)
 	if request.method == 'GET':
 		return render_template('index.html')
