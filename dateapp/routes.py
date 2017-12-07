@@ -7,5 +7,7 @@ from flask import render_template
 def index():
 	if request.method == 'POST':
 		day = request.form["userinput"]
-		print (day)
-	return render_template('index.html', day = day)
+		dateTime = datetime.datetime.strptime(day, '%Y-%m-%d').strftime('%A')
+		return render_template('index.html', date = dateTime)
+	if request.method == 'GET':
+		return render_template('index.html')
